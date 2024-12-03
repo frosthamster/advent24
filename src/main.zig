@@ -1,6 +1,7 @@
 const std = @import("std");
 const d01 = @import("01.zig");
 const d02 = @import("02.zig");
+const d03 = @import("03.zig");
 
 pub fn main() !void {
     var gpa = std.heap.GeneralPurposeAllocator(.{}).init;
@@ -32,6 +33,12 @@ pub fn main() !void {
     }
     if (std.mem.eql(u8, args.items[0], "022")) {
         try d02.solve2(alloc, path(debug, "inputs/02.input"));
+    }
+    if (std.mem.eql(u8, args.items[0], "031")) {
+        try d03.solve1(alloc, path(debug, "inputs/03.input"));
+    }
+    if (std.mem.eql(u8, args.items[0], "032")) {
+        try d03.solve2(alloc, path(debug, "inputs/03.input"));
     }
 }
 
